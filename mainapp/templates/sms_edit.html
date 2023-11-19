@@ -1,0 +1,12 @@
+{% extends 'base_generic.html' %}
+
+{% block content %}
+  <h1>Edit SMS</h1>
+  <form method="POST" class="sms-form">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Save changes</button>
+  </form>
+  <a href="{% url 'sms_list' %}">Cancel</a><br><br>
+  <a href="{% url 'index' %}">Index</a>
+{% endblock %}
